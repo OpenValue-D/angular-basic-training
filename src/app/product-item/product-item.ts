@@ -10,17 +10,6 @@ import { SquareImage } from "../square-image/square-image";
   styleUrl: './product-item.scss',
 })
 export class ProductItem {
-  product = input<Product>({
-    id: -1,
-    title: '',
-    price: -1,
-    description: '',
-    category: '',
-    image: '',
-    rating: {
-      rate: 0,
-      count: 0,
-    },
-  });
+  product = input.required<Product>();
 }
  
