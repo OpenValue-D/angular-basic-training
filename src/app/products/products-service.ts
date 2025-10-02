@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Product } from './shared/product';
+import { HttpClient } from '@angular/common/http';
 
 const EXAMPLE_PRODUCTS = [{
   id: 1,
@@ -33,8 +34,11 @@ const EXAMPLE_PRODUCTS = [{
   providedIn: 'root'
 })
 export class ProductsService {
+  private http = inject(HttpClient);
 
-  get(): Observable<Product[]> {
-    return of(EXAMPLE_PRODUCTS);
+  get(searchString: string): Observable<Product[]> {
+    const queryString = (searchString != null && searchString != '') ? '?filter=' + searchString : '';
+
+    return this.http.get<Product[]>('https://fakestoreapi.com/products' + queryString);
   }
 }

@@ -21,12 +21,15 @@ export class ProductsPage {
   products$: Observable<Product[]> = of([] as Product[])
 
   constructor() {  
-    this.products$ = this.productService.get().pipe(
-      startWith([] as Product[])
-    );
+    this.updateProducts();
+  }
+
+  private updateProducts() {
+    this.products$ = this.productService.get(this.searchTerm);
   }
 
   updateSearchTerm(newSearchTerm: string) {
     this.searchTerm = newSearchTerm;
+    this.products$ = this.productService.get(this.searchTerm);
   }
 }
