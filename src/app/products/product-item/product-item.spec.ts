@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductItem } from './product-item';
 import { MockComponents } from 'ng-mocks';
-import { StarRating } from '../star-rating/star-rating';
-import { SquareImage } from '../square-image/square-image';
+import { StarRating } from './star-rating/star-rating';
+import { SquareImage } from './square-image/square-image';
 import { createProductMock } from '../shared/product.mock';
 import { input } from '@angular/core';
 import { By } from '@angular/platform-browser';

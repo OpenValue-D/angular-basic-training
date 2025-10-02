@@ -3,9 +3,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductsOverview } from './products-overview';
 import { ProductItem } from '../product-item/product-item';
 import { MockComponent } from 'ng-mocks';
+import { By } from '@angular/platform-browser';
 import { Product } from '../shared/product';
 import { createProductMock } from '../shared/product.mock';
-import { By } from '@angular/platform-browser';
 
 describe('ProductsOverview', () => {
   let component: ProductsOverview;

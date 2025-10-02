@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { Product } from '../shared/product';
-import { StarRating } from "../star-rating/star-rating";
-import { SquareImage } from "../square-image/square-image";
+import { StarRating } from "./star-rating/star-rating";
+import { SquareImage } from "./square-image/square-image";
 
 @Component({
   selector: 'ov-product-item',

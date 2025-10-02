@@ -1,4 +1,14 @@
-<ov-product-search (searchTermUpdated)="updateSearchTerm($event)"></ov-product-search>
-<ov-products-overview [products]="products | productsFilter: searchTerm"></ov-products-overview>
+<nav>
+  <a routerLink="/"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{exact:true}">
+    Home
+  </a>
+  <a routerLink="/products"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{exact:true}">
+    Products
+  </a>
+</nav>
 
-<router-outlet />
+<router-outlet></router-outlet>
