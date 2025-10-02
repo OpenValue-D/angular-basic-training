@@ -31,7 +31,7 @@ describe('ProductsOverview', () => {
 
     fixture = TestBed.createComponent(ProductsOverview);
     component = fixture.componentInstance;
-    component.products = PRODUCTS_MOCK;
+    fixture.componentRef.setInput('products', PRODUCTS_MOCK);
     fixture.detectChanges();
   });
 
