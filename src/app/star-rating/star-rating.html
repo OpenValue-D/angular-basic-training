@@ -1,0 +1,9 @@
+@for (num of [0, 1, 2, 3, 4]; track num) {
+    @if (num < starCount()) {
+        <span class="fa fa-star star"></span>
+    } @else {
+        <span class="fa fa-star-o star"></span>
+    }
+    
+  }
+<span class="count">({{ reviewCount() }})</span>

@@ -1,0 +1,7 @@
+<ul class="products">
+    @for (product of products; track product.id) {
+        <li>
+            <ov-product-item [product]="product"></ov-product-item>
+        </li>
+    }
+</ul>

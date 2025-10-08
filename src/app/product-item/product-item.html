@@ -1,0 +1,16 @@
+<section class="product">
+  <a>
+    <ov-square-image [src]="product().image" [alt]="product().title"></ov-square-image>
+  </a>
+  <div class="info">
+    <p class="category">{{ product().category}}</p>
+    <a class="title">{{ product().title}}</a>
+    <p class="rating">
+      <ov-star-rating [starCount]="product().rating.rate" [reviewCount]="product().rating.count"></ov-star-rating>
+    </p>
+    <p class="description">
+      {{ product().description}}
+    </p>
+    <p class="price">{{ product().price }}</p>
+  </div>
+</section>
