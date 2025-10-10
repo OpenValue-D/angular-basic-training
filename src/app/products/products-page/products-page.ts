@@ -3,7 +3,7 @@ import { ProductSearch } from "../product-search/product-search";
 import { ProductsOverview } from "../products-overview/products-overview";
 import { ProductsFilterPipe } from "../shared/products-filter-pipe";
 import { ProductsService } from '../products-service';
-import { Observable, of, startWith } from 'rxjs';
+import { Observable, of, startWith, tap } from 'rxjs';
 import { Product } from '../shared/product';
 import { AsyncPipe } from '@angular/common';
 
@@ -25,11 +25,14 @@ export class ProductsPage {
   }
 
   private updateProducts() {
-    this.products$ = this.productService.get(this.searchTerm);
+    this.products$ = this.productService.get(this.searchTerm).pipe(
+      tap(elem => console.log("new elem", elem))
+    );
   }
 
   updateSearchTerm(newSearchTerm: string) {
+    console.log("New term", newSearchTerm);
     this.searchTerm = newSearchTerm;
-    this.products$ = this.productService.get(this.searchTerm);
+    this.updateProducts();
   }
 }
