@@ -168,6 +168,7 @@ npx ng g c StarRating
 
 ```html
 <ul class="products">
+  <!-- Repeat the following part -->
   <li>
     <ov-product-item></ov-product-item>
   </li>
@@ -175,6 +176,7 @@ npx ng g c StarRating
 ```
 
 - Render the amount of stars in the `StarRating` component using `@for` and `@if`
+  - it's sufficient to show support only full starts. Not fractions of stars like 4.1.
 
 Resources:
 - [Control flow blocks @if, @for, @switch explained](https://angular.dev/guide/templates/control-flow)

@@ -1,6 +1,11 @@
-# OvAngularBasic
+# OpenValue Angular Basic Training
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+This repository contains the training materials for the [Angular Basic Training by OpenValue](https://openvalue.training/).
+
+## Prerequesites:
+
+- 
+
 
 ## Development server
 
