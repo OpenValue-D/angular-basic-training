@@ -34,7 +34,7 @@ npx ng g c ProductsOverview
 npx ng g c ProductItem
 ```
 
-In `app.component.html` replace all html with:
+In `app.html` replace all html with:
 
 ```html
 <ov-products-overview></ov-products-overview>
@@ -45,7 +45,7 @@ You should see:
 products works!
 ```
 
-- Add the following product to `products-overview.ts` and make sure it's typed correctly
+- Add the following product to `products-overview.ts` and make sure it's typed correctly as a new field `products`.
 
 ```typescript
 {
@@ -63,10 +63,10 @@ products works!
   }
 ```
 
-_To quickly see the value of `product` on screen use a `Pipe` called `json` in `products.component.html`:_
+_To quickly see the value of `product` on screen use a `Pipe` called `json` in `products-overview.html`:_
 
 ```html
-{{ product | json }}
+{{ products | json }}
 ```
 
 Resources:
@@ -127,7 +127,7 @@ You should have a working page with one product on screen.
 
 ![product-html](../assets/product-html-components.png)
 
-- Generate a component for Rating and SquareImage
+- Generate a component for `StarRating` and `SquareImage`
 ```
 npx ng g c SquareImage
 npx ng g c StarRating
