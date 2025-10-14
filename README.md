@@ -1,6 +1,17 @@
-# OvAngularBasic
+# OpenValue Angular Basic Training
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+This repository contains the training materials for the [Angular Basic Training by OpenValue](https://openvalue.training/).
+
+## Prerequesites:
+
+- Node.js version 24 (we recommend to install Node.js using the [node version manager "nvm"](https://github.com/nvm-sh/nvm)
+  - execute `node --version` to verify
+- npm version 11
+  - execute `npm --version` to verify
+- Git
+  - make sure you can clone this repository and create your own commits
+- Chrome browser
+  - in the root of this repo `npm run test` should run the tests and open a Chrome Browser
 
 ## Development server
 
