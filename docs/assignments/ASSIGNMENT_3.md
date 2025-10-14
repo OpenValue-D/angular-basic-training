@@ -36,7 +36,7 @@ npx ng g p products-filter
 
 - it should be used as follows in the `App` component:
 ```html
-<ov-products [products]="products | productsFilter: query"></ov-products>
+<ov-products-overview [products]="products | productsFilter: query"></ov-products-overview>
 ```
 
 - Make sure the `Pipe` uses a `filter` string (lowercase) to filter `Product`s based on title (lowercase).
