@@ -125,6 +125,9 @@ it('should render a square image with src and alt', () => {
 });
 ```
 
+- an input argument can be set using `fixture.componentRef.setInput('product', mockProduct);`
+- an HTML element can be queried by CSS class uing `fixture.nativeElement.querySelector('.<class>');`
+
 Resources:
 - [Component testing](https://angular.dev/guide/testing/components-scenarios)
 
