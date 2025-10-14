@@ -127,6 +127,12 @@ it('should render a square image with src and alt', () => {
 
 - an input argument can be set using `fixture.componentRef.setInput('product', mockProduct);`
 - an HTML element can be queried by CSS class uing `fixture.nativeElement.querySelector('.<class>');`
+- a child component can be queried with the `debugElement`
+```typescript
+const ratingComponents = fixture.debugElement.queryAll(
+  By.directive(StarRating) // here you can put the Child component you want to query
+);
+```
 
 Resources:
 - [Component testing](https://angular.dev/guide/testing/components-scenarios)
