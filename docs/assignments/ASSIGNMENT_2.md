@@ -105,6 +105,9 @@ describe('ProductsOverview', () => {
 Resources:
 - [MockComponent](https://ng-mocks.sudo.eu/api/MockComponent)
 - [Component testing](https://angular.dev/guide/testing/components-scenarios)
+- [Docs for DebugElement](https://angular.dev/api/core/DebugElement)
+- [Docs for HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
+  - having methods like `innerText` and [`innerHTML`](https://developer.mozilla.org/de/docs/Web/API/Element/innerHTML)
 
 ## 1.3 ProductItem component
 
@@ -129,7 +132,7 @@ it('should render a square image with src and alt', () => {
 - an HTML element can be queried by CSS class uing `fixture.nativeElement.querySelector('.<class>');`
 - a child component can be queried with the `debugElement`
 ```typescript
-const ratingComponents = fixture.debugElement.queryAll(
+const ratingComponents: DebugElement[] = fixture.debugElement.queryAll(
   By.directive(StarRating) // here you can put the Child component you want to query
 );
 ```
