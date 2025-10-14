@@ -25,8 +25,9 @@ get(): Observable<Product[]> {
 
 ```html
 <!-- You can use the async pipe to get the values from the observable-->
-<ov-products-overview [products]="(products$ | async) || [] | productsFilter: searchTerm"></ov-products-overview>
-<!-- The `|| []` syntax makes sure there is a value at any time, required to make the TS compiler happy -->
+@if (products$ | async; as products) {
+  <ov-products-overview [products]="products | productsFilter: searchTerm"></ov-products-overview>
+}
 ```
 
 References:
