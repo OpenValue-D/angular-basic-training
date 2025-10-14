@@ -1,2 +1,2 @@
 <ov-product-search (searchTermUpdated)="updateSearchTerm($event)"></ov-product-search>
-<ov-products-overview [products]="(products$ | async) || [] | productsFilter: searchTerm"></ov-products-overview>
+<ov-products-overview [products]="products() | productsFilter: searchTerm"></ov-products-overview>

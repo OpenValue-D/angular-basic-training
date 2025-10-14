@@ -1,37 +1,35 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProductSearch } from "../product-search/product-search";
 import { ProductsOverview } from "../products-overview/products-overview";
 import { ProductsFilterPipe } from "../shared/products-filter-pipe";
 import { ProductsService } from '../products-service';
 import { Observable, of, startWith, tap } from 'rxjs';
 import { Product } from '../shared/product';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'ov-products-page',
-  imports: [ProductSearch, ProductsOverview, ProductsFilterPipe, AsyncPipe],
+  imports: [ProductSearch, ProductsOverview, ProductsFilterPipe],
   templateUrl: './products-page.html',
   styleUrl: './products-page.scss'
 })
 export class ProductsPage {
   private productService = inject(ProductsService);
+  products = signal<Product[]>([]);
 
   searchTerm = ''
-
-  products$: Observable<Product[]> = of([] as Product[])
 
   constructor() {  
     this.updateProducts();
   }
 
   private updateProducts() {
-    this.products$ = this.productService.get(this.searchTerm).pipe(
-      tap(elem => console.log("new elem", elem))
-    );
+    this.productService.get(this.searchTerm).subscribe({
+      next: (value) => this.products.set(value),
+      error: (err) => console.log("Error when fetching products.", err),
+    });
   }
 
   updateSearchTerm(newSearchTerm: string) {
-    console.log("New term", newSearchTerm);
     this.searchTerm = newSearchTerm;
     this.updateProducts();
   }
