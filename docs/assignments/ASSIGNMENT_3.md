@@ -43,6 +43,7 @@ npx ng g p products-filter
 
 Resources:
 - [Guide Pipes](https://angular.dev/guide/templates/pipes).
+- [Training Built-In pipes](https://angular.dev/tutorials/learn-angular/22-pipes)
 
 ## Client-side search
 
