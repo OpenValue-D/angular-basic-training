@@ -154,6 +154,7 @@ The App should be responsible for holding the data for users.
   - use the new compontent in the App component
   - add an output "newUser"
   - listen to the output event in the App component
+  - Hint: to use Forms in Angular we need a specific Module importet, don't forget to import this module in the new component
 - create a new component for the table
   - move the HMTL to the new component
   - use the new compontent in the App component
