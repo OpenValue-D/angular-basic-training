@@ -137,7 +137,7 @@ When the user entered a new user and clicks "Save" the new user should be added 
 References:
 - [How to bind to input field values](https://angular.dev/guide/forms/template-driven-forms#bind-input-controls-to-data-properties)
 
-## 6. Split into Components
+## 5. Split into Components
 
 ### Goal
 Create two components. One for the form and one for the table.
@@ -157,7 +157,7 @@ The App should be responsible for holding the data for users.
   - listen to the output event in the App component
   - Hint: to use Forms in Angular we need a specific Module importet, don't forget to import this module in the new component
 - create a new component for the table
-  - move the HMTL to the new component
+  - move the HTML to the new component
   - use the new compontent in the App component
   - add an input "users" to the table component
   - use the users input to render all rows in the table
@@ -175,3 +175,31 @@ Utilize Angular Material to make the form look nice.
 References:
 - [Angular Material - Get Started](https://material.angular.dev/guide/getting-started)
 - [Angular Material - All components](https://material.angular.dev/components)
+
+## 7. Integrate a backend
+
+### Goal
+- we fetch the users from a backend and display them in the table
+- when we create a new user we post a user to the backend
+
+### Step by Step
+- [integrate the HttpClient to your application](https://angular.dev/guide/http/setup)
+- create a new service (using `npx ng generate`)
+- add a `getUsers` method to that service, which does a GET call to [`https://jsonplaceholder.typicode.com/users`](https://jsonplaceholder.typicode.com/users)
+- inject the service in the App component ([example code](https://angular.dev/guide/di/creating-injectable-service#service-examples)
+- use the service to fetch the users
+  - Hint: you may need to adapt your interface to new attribute names:
+```json
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret"
+}
+```
+- add a `addUser` method to the service, which does a POST call to [`https://jsonplaceholder.typicode.com/users`](https://jsonplaceholder.typicode.com/users)
+  - and sends the user data in the given format (fields "id", "name", "username")
+  - Hint: the given backend doesn't allow inserting data, but it'll still return a valid HTTP status 201
+
+References:
+- [HttpClient Setup](https://angular.dev/guide/http/setup)
+- [JSON placeholder mock API](https://jsonplaceholder.typicode.com)
