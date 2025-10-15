@@ -136,7 +136,31 @@ When the user entered a new user and clicks "Save" the new user should be added 
 References:
 - [How to bind to input field values](https://angular.dev/guide/forms/template-driven-forms#bind-input-controls-to-data-properties)
 
-## 5. Integrate Angular Material
+## 6. Split into Components
+
+### Goal
+Create two components. One for the form and one for the table.
+
+The form should have an output, that emits whenever the user clicks the "Save" button.
+
+The table should have an input that accepts an array of users.
+
+The App should be responsible for holding the data for users.
+
+### Step by Step
+
+- create a new component for the form (`npx ng generate component`)
+  - move the HTML of the form to the component's HTML template
+  - use the new compontent in the App component
+  - add an output "newUser"
+  - listen to the output event in the App component
+- create a new component for the table
+  - move the HMTL to the new component
+  - use the new compontent in the App component
+  - add an input "users" to the table component
+  - use the users input to render all rows in the table
+
+## 6. Integrate Angular Material
 
 ### Goal
 Utilize Angular Material to make the form look nice.
