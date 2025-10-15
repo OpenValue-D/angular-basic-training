@@ -10,7 +10,7 @@ git checkout assignment-2-solution
 - Generate a `ProductSearch`component (using `npx ng generate`)
 - Implement the following requirements:
   - It uses a [MatInput](https://material.angular.dev/components/input/overview) (you'll have to install `@angular/material` using `npx ng add @angular/material`)
-  - It uses two-way binding NgModel (feature module must import `FormsModule`). Example:
+  - It uses two-way binding NgModel (the `ProductSearch` component must import `FormsModule`). Example:
     ```html
     <input [(ngModel)]="value" (ngModelChange)="doSomething($event)" />
     ```
@@ -36,13 +36,14 @@ npx ng g p products-filter
 
 - it should be used as follows in the `App` component:
 ```html
-<ov-products [products]="products | productsFilter: query"></ov-products>
+<ov-products-overview [products]="products | productsFilter: query"></ov-products-overview>
 ```
 
 - Make sure the `Pipe` uses a `filter` string (lowercase) to filter `Product`s based on title (lowercase).
 
 Resources:
 - [Guide Pipes](https://angular.dev/guide/templates/pipes).
+- [Training Built-In pipes](https://angular.dev/tutorials/learn-angular/23-pipes-format-data)
 
 ## Client-side search
 
