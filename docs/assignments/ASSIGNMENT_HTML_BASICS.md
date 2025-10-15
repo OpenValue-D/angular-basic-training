@@ -2,7 +2,7 @@
 
 ## Setup
 
-Create a new Angular project using npx `npx -p @angular/cli ng new <repo-name>` (replace "<repo-name>") with the name of your choice.
+Create a new Angular project using npx `npx -p @angular/cli ng new <repo-name>` (replace "`<repo-name>`") with the name of your choice.
 
 Then remove all lines from the files `styles.scss` and `app.html`.
 
