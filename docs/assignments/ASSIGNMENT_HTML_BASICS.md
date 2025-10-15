@@ -118,6 +118,7 @@ th {
   }
 ];
 ```
+- create also an interface "User" with the required fields for the given data
 
 ## 4. Add the "Save" functionality
 
