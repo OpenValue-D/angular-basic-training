@@ -10,44 +10,92 @@ git checkout assignment-4-solution
 ## 5.1 Products service
 
 - Generate a `ProductsService` (using `npx ng generate`)
-- the service should provide the `Products` as an `Observable`
+- the service should provide the `Products` in a `get` method
   - take the example products from the `ProductsPage` component
+- it should have a `get` method, which returns the products
+- refactor the `ProductsPage` to use the products from the `ProductsService`
 
-With `of` you can create an Observable from an existing value:
-
+<details>
+<summary>Hint for creating the `ProductsService`</summary>
+- the `get` method doesn't need a parameter
+- the method has `Product[]` as response type
+  
 ```typescript
-get(): Observable<Product[]> {
-  return of(EXAMPLE_PRODUCTS);
+// the method signature looks like this
+methodName(): ResponseType {
+  // code
+  return [{}]; // add correct products here
 }
 ```
-- refactor the `ProductOverview` to use the products from the `ProductsService`
+</details>
 
+<details>
+<summary>Hint for using service in `ProductPage`</summary>
 
-```html
-<!-- You can use the async pipe to get the values from the observable-->
-@if (products$ | async; as products) {
-  <ov-products-overview [products]="products | productsFilter: searchTerm"></ov-products-overview>
+- inject the service using the `inject` method
+  
+```typescript
+private productService = inject(ProductsService);
+```
+- the products may be saved in the existing `products` class field
+- the products can be fetched in the `ngOnInit` lifecycle method
+```typescript
+ngOnInit() {  
+  this.products = this.productService.get();
 }
 ```
+</details>
 
 References:
-- [Async Pipe](https://angular.dev/api/common/AsyncPipe)
-- [Observable docs](https://rxjs.dev/guide/observable)
-- [Subject docs](https://rxjs.dev/guide/subject)
+- [Guide Creating a Service](https://angular.dev/guide/di/creating-injectable-service)
 
 ## 5.2 Fetch Products from API
 
 Use the [fakestoreapi](https://fakestoreapi.com/docs) to fetch the products dynamically.
 
 - setup the [HTTP client](https://angular.dev/guide/http/setup) in the `app.config.ts` component
-- inject and use the HTTPClient in the `ProductService` to make calls to the [fakestoreapi](https://fakestoreapi.com/docs)
+- inject and use the HTTPClient in the `ProductService`'s `get` method to make calls to the [fakestoreapi](https://fakestoreapi.com/docs)
 
 The response of the HttpClients call can be typed easily:
 ```typescript
 this.http.get<Product[]>('https://fakestoreapi.com/products');
 ```
 
+<details>
+<summary>Hint for injecting the HttpClient</summary>
+
+- inject the service using the `inject` method
+  
+```typescript
+private http = inject(HttpClient);
+```
+</details>
+
+<details>
+<summary>Hint for updating the `get` method</summary>
+
+- the types need to be updated accordingly as the `httpClient`
+  returns a `Observable`
+  
+```typescript
+get(): Observable<Product[]> {
+  return this.http.get<Product[]>('https://fakestoreapi.com/products');
+}
+```
+
+- remember also the types in the `ProductPage` component needs to be changed
+```typescript
+ngOnInit() {  
+  this.productService.get(this.searchTerm).subscribe({
+    next: (value) => // do something with the value,
+    error: (err) => console.log("Error when fetching products.", err),
+  });
+}
+```
+</details>
+
 References:
+- [Observable docs](https://rxjs.dev/guide/observable)
 - [Angular HTTP client](https://angular.dev/guide/http)
 - [fakestoreapi docs](https://fakestoreapi.com/docs)
 
