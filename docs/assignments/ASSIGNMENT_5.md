@@ -10,7 +10,7 @@ git checkout assignment-4-solution
 ## 5.1 Products service
 
 - Generate a `ProductsService` (using `npx ng generate`)
-- the service should provide the `Products` as an `Observable`
+- the service should provide the `Products` in a `get` method
   - take the example products from the `ProductsPage` component
 - it should have a `get` method, which returns the products
 - refactor the `ProductsPage` to use the products from the `ProductsService`
