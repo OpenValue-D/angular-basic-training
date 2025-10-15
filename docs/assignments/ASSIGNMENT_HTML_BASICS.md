@@ -2,7 +2,7 @@
 
 ## Setup
 
-Create a new Angular project using npx `npx -p @angular/cli ng new <repo-name>` (replace "<repo-name>") with the name of your choice.
+Create a new Angular project using npx `npx -p @angular/cli ng new <repo-name>` (replace "`<repo-name>`") with the name of your choice.
 
 Then remove all lines from the files `styles.scss` and `app.html`.
 
@@ -118,6 +118,7 @@ th {
   }
 ];
 ```
+- create also an interface "User" with the required fields for the given data
 
 ## 4. Add the "Save" functionality
 
@@ -135,3 +136,42 @@ When the user entered a new user and clicks "Save" the new user should be added 
 
 References:
 - [How to bind to input field values](https://angular.dev/guide/forms/template-driven-forms#bind-input-controls-to-data-properties)
+
+## 6. Split into Components
+
+### Goal
+Create two components. One for the form and one for the table.
+
+The form should have an output, that emits whenever the user clicks the "Save" button.
+
+The table should have an input that accepts an array of users.
+
+The App should be responsible for holding the data for users.
+
+### Step by Step
+
+- create a new component for the form (`npx ng generate component`)
+  - move the HTML of the form to the component's HTML template
+  - use the new compontent in the App component
+  - add an output "newUser"
+  - listen to the output event in the App component
+  - Hint: to use Forms in Angular we need a specific Module importet, don't forget to import this module in the new component
+- create a new component for the table
+  - move the HMTL to the new component
+  - use the new compontent in the App component
+  - add an input "users" to the table component
+  - use the users input to render all rows in the table
+
+## 6. Integrate Angular Material
+
+### Goal
+Utilize Angular Material to make the form look nice.
+
+### Step by Step
+- install [Angular Material](https://material.angular.dev/guide/getting-started) using `npx ng add @angular/material`
+- study the [docs for forms](https://material.angular.dev/components/input/overview) and use Angular Material for the `<input>` elements
+- study the [docs for buttons](https://material.angular.dev/components/button/overview) and use Angular Material to style the save button
+
+References:
+- [Angular Material - Get Started](https://material.angular.dev/guide/getting-started)
+- [Angular Material - All components](https://material.angular.dev/components)

@@ -12,6 +12,7 @@ This repository contains the training materials for the [Angular Basic Training 
   - make sure you can clone this repository and create your own commits
 - Chrome browser
   - in the root of this repo `npm run test` should run the tests and open a Chrome Browser
+- around 2 GB of free space
 
 ## Development server
 
