@@ -135,3 +135,17 @@ When the user entered a new user and clicks "Save" the new user should be added 
 
 References:
 - [How to bind to input field values](https://angular.dev/guide/forms/template-driven-forms#bind-input-controls-to-data-properties)
+
+## 5. Integrate Angular Material
+
+### Goal
+Utilize Angular Material to make the form look nice.
+
+### Step by Step
+- install [Angular Material](https://material.angular.dev/guide/getting-started) using `npx ng add @angular/material`
+- study the [docs for forms](https://material.angular.dev/components/input/overview) and use Angular Material for the `<input>` elements
+- study the [docs for buttons](https://material.angular.dev/components/button/overview) and use Angular Material to style the save button
+
+References:
+- [Angular Material - Get Started](https://material.angular.dev/guide/getting-started)
+- [Angular Material - All components](https://material.angular.dev/components)
