@@ -6,8 +6,10 @@ This repository contains the training materials for the [Angular Basic Training 
 
 - Node.js version 24 (we recommend to install Node.js using the [node version manager "nvm"](https://github.com/nvm-sh/nvm)
   - execute `node --version` to verify
-- npm version 11
+- npm version 11 (it's included in the Node.js installation)
   - execute `npm --version` to verify
+  - executing `npm install` in this repo should be successful
+  - executing `npm run start` should allow you to see some content under [localhost:4200](https://localhost:4200)
 - Git
   - make sure you can clone this repository and create your own commits
 - Chrome browser
@@ -19,7 +21,7 @@ This repository contains the training materials for the [Angular Basic Training 
 To start a local development server, run:
 
 ```bash
-ng serve
+npm run start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -29,13 +31,13 @@ Once the server is running, open your browser and navigate to `http://localhost:
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
 ```bash
-ng generate component component-name
+npx ng generate component component-name
 ```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
 ```bash
-ng generate --help
+npx ng generate --help
 ```
 
 ## Building
@@ -43,7 +45,7 @@ ng generate --help
 To build the project run:
 
 ```bash
-ng build
+npm run build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
@@ -53,19 +55,5 @@ This will compile your project and store the build artifacts in the `dist/` dire
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+npm run test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
